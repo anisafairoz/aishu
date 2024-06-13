@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Admin Panel</h1>
+    <div class="user-info">
+        <p><strong>Username:</strong> <span id="userName"></span></p>
+        <p><strong>Password:</strong> <span id="userPassword"></span></p>
+    </div>
+    <button class="logout-button" onclick="logout()">Logout</button>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    const role = getCookie("role");
+    if (role !== "admin") {
+        window.location = "login.html";
+    }
+
+    const username = decodeURIComponent(getCookie("username"));
+    const password = decodeURIComponent(getCookie("password"));
+
+    if (username && password) {
+        document.getElementById("userName").textContent = username;
+        document.getElementById("userPassword").textContent = password;
+    } else {
+        window.location = "login.html";
+    }
+});
+
+function logout() {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "role=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location = "login.html";
+}
+</script>
+</body>
+</html>

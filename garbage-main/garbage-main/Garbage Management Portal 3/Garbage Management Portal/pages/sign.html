@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Information Form</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: fl ex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #c19a6b;
+background-image: url('https://previews.123rf.com/images/dashu83/dashu831801/dashu83180100051/92599112-waste-recycling-eco-symbol-with-garbage-disposal-on-wooden-table-background-top-view.jpg');
+background-size: cover;
+background-position: center;
+}
+.container {
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: 300px;
+margin-left: 600px;
+background-color: #f0f0f0;
+}
+input[type="text"],
+input[type="password"],
+select,
+input[type="number"],
+textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+input[type="submit"],
+.btn {
+background-color: #0056b3;
+color: #ffff;
+border: none;
+padding: 12px 20px;
+border-radius: 4px;
+cursor: pointer;
+width: 100%;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin:10px;
+transition: background-color 0.3s;
+}
+input[type="submit"]:hover,
+.btn:hover {
+background-color: #f0f0f0;
+}
+.signup-title {
+text-align: center;
+}
+.close-button {
+background: none;
+border: none;
+font-size: 20px;
+position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+}
+.avatar {
+width: 100px; /* Adjust the width as needed */
+height: 100px; /* Adjust the height as needed */
+margin: 0 auto 20px; /* Center the avatar and add some bottom margin */
+display: block; /* To center the image */
+border-radius: 50%; /* Make it circular */
+background-image: url('https://cdn3.vectorstock.com/i/1000x1000/53/62/man-woman-putting-garbage-into-trash-bin-waste-vector-15155362.jpg'); /* Add your avatar image URL here */
+background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="avatar"></div>
+<h1 class="signup-title">Sign Up</h1>
+<button class="close-button">×</button>
+<form action="#" method="post">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+<label for="gender">Gender:</label>
+<select id="gender" name="gender" required>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required>
+<label for="address">Address:</label>
+<input type="text" id="address" name="address" required>
+<label for="bankDetails">Bank Details:</label>
+<textarea id="bankDetails" name="bankDetails" rows="4" required></textarea>
+<input type="submit" value="Submit">
+</form>
+</div>
+<script src="/page_scripts/sigin.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garbage Management Portal</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.container {
+text-align: center;
+margin-top: 50px;
+}
+.btn {
+background-color: #f0f0f0;
+color: #ffff;
+border: none;
+padding: 12px 20px;
+border-radius: 4px;
+cursor: pointer;
+text-decoration: none;
+margin: 0 10px;
+transition: background-color 0.3s;
+}
+.btn:hover {
+background-color: #f0f0f0;
+}
+</style>
+
+</head>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dispose</title>
+<style>
+h2{
+color :#0000FF;
+text-align:center;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: fl ex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #0056b3;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: fl ex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #0056b3;
+background-image: url('https://previews.123rf.com/images/dashu83/dashu831801/dashu83180100051/92599112-waste-recycling-eco-symbol-with-garbage-disposal-on-wooden-table-background-top-view.jpg');
+background-size: cover;
+background-position: center;
+}
+.btn{
+}
+.container {
+    margin-left: 600px;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border: 2px solid #ccc;
+width: 300px;
+box-sizing: border-box;
+}
+.form-group {
+margin-bottom: 15px;
+}
+.form-group label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+.form-group input, .form-group select {
+width: 100%;
+padding: 8px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.btn {
+background-color: #007bff ;
+color: #ffff;
+border: none;
+padding: 12px 20px;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 20px;
+margin-left: 89px;
+}
+.btn:hover {
+ackground-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Dispose</h2>
+<form action="/submit" method="post">
+<div class="form-group">
+<label for="amount">Amount of Waste:</label>
+<input type="number" id="amount" name="amount" required>
+</div>
+<div class="form-group">
+<label for="place">Place:</label>
+<input type="text" id="place" name="place" required>
+</div>
+<div class="form-group">
+<label for="contact">Contact No:</label>
+<input type="text" id="contact" name="contact" required>
+</div>
+<div class="form-group">
+<label for="type">Type of Waste:</label>
+<select id="type" name="type" required>
+<option value="">Select type</option>
+<option value="Plastic Waste">Plastic Waste</option>
+<option value="Paper Waste ">Paper Waste </option>
+<option value="Organic Waste">Organic Waste</option>
+<option value="Metal Waste ">Metal Waste </option>
+<option value="hemical waste">hemical waste</option>
+<option value="e- waste">e-waste</option>
+<option value="other">Other</option>
+</select>
+</div>
+<button type="submit" class="btn">Collect </button>
+</form>
+</div>
+<script src="/page_scripts/"></script>
+</body>
+</html>

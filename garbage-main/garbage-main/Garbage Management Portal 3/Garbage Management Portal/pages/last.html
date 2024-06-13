@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You Page</title>
+<style>
+body, html {
+height: 90%;
+margin: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url('https://thumbs.dreamstime.com/b/reuse-reduce-recycle-poster-design-vector-eps-ecology-concept-background-177091020.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+}
+.content {
+text-align:center;
+padding: 20px; 
+border-radius: 10px;
+background-color: rgba(191, 185, 185, 0.8); 
+
+}
+</style>
+</head>
+<body>
+<div class="content">
+<center>
+
+<h2>We appreciate your Action</h2>
+<h3>Your Garbage Details are Received. It will be Collected Soon</h3>
+
+<label for="amount"> Your Amount "RS.<span id="totalAmount"></span>" will be Credited to Your Account</label>
+
+<h3>The vehicle <span id="vehicleNumber"></span> will collect the garbage on <span id="collectionDate"></span> at <span id="collectionTime"></span></h3>
+
+<h1>Thank You For Visiting Us!</h1>
+</center>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const totalAmount = localStorage.getItem('totalAmount');
+        const totalAmountElement = document.getElementById('totalAmount');
+        
+        if (totalAmount !== null) {
+            totalAmountElement.textContent = totalAmount;
+        } else {
+            totalAmountElement.textContent = 'N/A';
+        }
+        localStorage.removeItem('totalAmount');
+
+        
+        function generateRandomVehicleNumber() {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const numbers = '0123456789';
+            let vehicleNumber = '';
+            for (let i = 0; i < 2; i++) {
+                vehicleNumber += letters.charAt(Math.floor(Math.random() * letters.length));
+            }
+            vehicleNumber += '-';
+            for (let i = 0; i < 2; i++) {
+                vehicleNumber += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            }
+            vehicleNumber += '-';
+            for (let i = 0; i < 4; i++) {
+                vehicleNumber += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            }
+            return vehicleNumber;
+        }
+
+        function generateRandomDateTime() {
+            const now = new Date();
+            const randomDays = Math.floor(Math.random() * 7); 
+            const randomHours = Math.floor(Math.random() * 24); 
+            const randomMinutes = Math.floor(Math.random() * 60); 
+            
+            const collectionDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + randomDays, randomHours, randomMinutes);
+
+            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit' };
+            
+            return {
+                date: collectionDate.toLocaleDateString(undefined, dateOptions),
+                time: collectionDate.toLocaleTimeString(undefined, timeOptions)
+            };
+        }
+
+        const vehicleNumberElement = document.getElementById('vehicleNumber');
+        const collectionDateElement = document.getElementById('collectionDate');
+        const collectionTimeElement = document.getElementById('collectionTime');
+
+        const vehicleNumber = generateRandomVehicleNumber();
+        const collectionDateTime = generateRandomDateTime();
+
+        vehicleNumberElement.textContent = vehicleNumber;
+        collectionDateElement.textContent = collectionDateTime.date;
+        collectionTimeElement.textContent = collectionDateTime.time;
+    });
+</script>
+</body>
+</html>

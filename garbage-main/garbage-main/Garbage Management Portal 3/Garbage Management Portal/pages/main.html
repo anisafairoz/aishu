@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garbage Details</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #c19a6b;
+    background-image: url('https://previews.123rf.com/images/dashu83/dashu831801/dashu83180100051/92599112-waste-recycling-eco-symbol-with-garbage-disposal-on-wooden-table-background-top-view.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.container {
+    text-align: center;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav {
+    background-color: #007bff;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+h1 {
+    margin-bottom: 30px;
+}
+.garbage-info {
+    max-width: 400px;
+    margin: auto;
+}
+.waste-list {
+    list-style-type: none;
+    padding: 0;
+}
+.waste-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.waste-list li:last-child {
+    margin-bottom: 0;
+}
+.dispose-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.dispose-button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<nav>
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<div class="container">
+    <h1>Garbage Details</h1>
+    <div class="garbage-info">
+        <ul class="waste-list">
+            <li>Plastic Waste - Quantity: 50g - Amount: RS.150</li>
+            <li>Paper Waste - Quantity: 50g - Amount: RS.80</li>
+            <li>Organic Waste - Quantity: 50g - Amount: RS.130</li>
+            <li>Metal Waste - Quantity: 50g - Amount: RS.200</li>
+            <li>Chemical Waste - Quantity: 50g - Amount: RS.120</li>
+            <li>e-waste - Quantity: 50g - Amount: RS.180</li>
+        </ul>
+    </div>
+    <button class="dispose-button">Let's Dispose</button>
+</div>
+<footer>
+    &copy; 2024 Garbage Management. All rights reserved.
+</footer>
+<script src="/page_scripts/dispose.js"></script>
+</body>
+</html>
